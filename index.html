@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fily · group8.umons</title>
+<style>
+  :root {
+    --bg: #f3f5fa; --card: #fff; --ink: #1c2650; --soft: #5a6285;
+    --accent: #f2b134; --line: #d6dbea;
+    --ok: #1f7a4d; --ok-bg: #dcf2e6; --soon: #8a5a00; --soon-bg: #fbecc8;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151b34; --card: #1e2546; --ink: #e8ebf7; --soft: #aab1d0;
+      --line: #343d66; --ok: #7fd9a8; --ok-bg: #173a2b; --soon: #f5cd73; --soon-bg: #3b3018;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 1.05rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  main { width: min(720px, 100% - 2.5rem); margin: 0 auto; padding: 4rem 0 3rem; }
+  h1 { font-size: clamp(2.6rem, 8vw, 3.6rem); line-height: 1; margin: 0 0 .5rem; }
+  h1::after { content: ""; display: block; width: 3rem; height: 6px; background: var(--accent); border-radius: 3px; margin-top: 1rem; }
+  h2 { font-size: 1.3rem; margin: 2.5rem 0 .75rem; }
+  p { margin: 0 0 1rem; }
+  .soft { color: var(--soft); }
+  a { color: inherit; text-underline-offset: 3px; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .service {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 1rem 1.25rem; margin-bottom: .75rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+  }
+  .service strong { display: block; }
+  .service span.soft { font-size: .95rem; }
+  .status { font-size: .85rem; font-weight: 600; padding: .2rem .7rem; border-radius: 999px; white-space: nowrap; }
+  .ok   { color: var(--ok);   background: var(--ok-bg); }
+  .soon { color: var(--soon); background: var(--soon-bg); }
+  ol { padding-left: 1.3rem; margin: 0; }
+  li { margin-bottom: .4rem; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .9rem; color: var(--soft); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fily</h1>
+  <p class="soft">Partage de fichiers et de médias pour les entreprises du réseau, par le groupe&nbsp;8.</p>
+
+  <h2>Nos services</h2>
+  <!-- Statut : class="status ok" + Disponible, ou class="status soon" + Bientôt -->
+  <div class="service">
+    <div>
+      <strong>Partage de fichiers</strong>
+      <span class="soft">Envoi, téléchargement et droits d’accès par utilisateur</span>
+    </div>
+    <span class="status soon">Bientôt</span>
+  </div>
+  <div class="service">
+    <div>
+      <strong>Audio et vidéo</strong>
+      <span class="soft">Hébergement et lecture en ligne de vos médias</span>
+    </div>
+    <span class="status soon">Bientôt</span>
+  </div>
+</main>
+</body>
+</html>
