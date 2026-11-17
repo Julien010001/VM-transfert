@@ -31,13 +31,18 @@
   .soft { color: var(--soft); }
   a { color: inherit; text-underline-offset: 3px; }
   a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-  .service {
+  .service, .card {
     background: var(--card); border: 1px solid var(--line); border-radius: 10px;
     padding: 1rem 1.25rem; margin-bottom: .75rem;
     display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
   }
-  .service strong { display: block; }
-  .service span.soft { font-size: .95rem; }
+  .service strong, .card strong { display: block; }
+  .service span.soft, .card .soft { font-size: .95rem; }
+  .card p {margin: 0;}
+  .card p + p, .card .soft + pre, .card strong + p { margin-top: .35rem;}
+  .card ul {margin: .5rem 0 0; padding-left: 1.3rem; }
+  .side { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+  .url { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92rem; font-weight: 600; }
   .status { font-size: .85rem; font-weight: 600; padding: .2rem .7rem; border-radius: 999px; white-space: nowrap; }
   .ok   { color: var(--ok);   background: var(--ok-bg); }
   .soon { color: var(--soon); background: var(--soon-bg); }
@@ -55,26 +60,45 @@
 <main>
   <h1>Fily</h1>
   <p class="soft">Partage de fichiers et de médias pour les entreprises du réseau, par le groupe&nbsp;8.</p>
-  <a class="btn" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">Voir notre vidéo de présentation</a>
 
   <h2>Nos services</h2>
-  <!-- Statut : class="status ok" + Disponible, ou class="status soon" + Bientôt -->
+  <!-- Statut : class="status ok" + Actif, ou class="status soon" + Bientôt -->
   <div class="service">
     <div>
       <strong>Partage de fichiers</strong>
       <span class="soft">Envoi, téléchargement et droits d’accès par utilisateur</span>
     </div>
-    <span class="status soon">Bientôt</span>
+    <div class="side">
+      <a class="url" href="https://files.group8.umons/web/client/login">files.group8.umons</a>
+      <span class="status ok">Actif</span>
+    </div>
   </div>
   <div class="service">
     <div>
       <strong>Audio et vidéo</strong>
       <span class="soft">Hébergement et lecture en ligne de vos médias</span>
     </div>
-    <span class="status soon">Bientôt</span>
+    <div class="side">
+      <a class="url" href="https://stream.group8.umons">stream.group8.umons</a>
+      <span class="status ok">Actif</span>
+    </div>
+  </div>
+  <h2> Obtention d'un compte </h2>
+  <div class="card">
+    <p> L'inscription se fera via le fournisseur d'identité dès que possible, en attendant les créations de compte sont faites sur demande:</p>
+    <ul>
+      <li>thomas.tomsen@student.umons.ac.be</li>
+      <li>julien.meulders@student.umons.ac.be</li>
+    </ul>
+  </div>
+
+  <h2>Règles d'usage</h2>
+  <div class="card">
+    <p> Pour l'instant, chaque utilisateur peut envoyer, lister, télécharger et supprimer des fichiers.</p>
   </div>
 
   <footer>Fily · group8.umons </footer>
+  
 </main>
 </body>
 </html>
